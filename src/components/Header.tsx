@@ -58,9 +58,11 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
               <div className="relative">
-                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 via-orange-600 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-hover:shadow-xl">
-                  <span className="text-white font-bold text-lg sm:text-2xl">M</span>
-                </div>
+                <img
+                  src="/Public/assest/logo-1.png"
+                  alt="Mitra Commercial Logo"
+                  className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl object-contain shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-xl bg-white"
+                />
                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-lg sm:rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
               </div>
               <div className="transform group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-all duration-300">
@@ -75,19 +77,16 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`relative px-3 xl:px-5 py-3 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-300 group overflow-hidden ${
-                    location.pathname === item.href
-                      ? 'text-orange-600 bg-orange-50 shadow-md'
-                      : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-md'
-                  }`}
+                  className={`relative px-3 xl:px-5 py-3 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-300 group overflow-hidden ${location.pathname === item.href
+                    ? 'text-orange-600 bg-orange-50 shadow-md'
+                    : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-md'
+                    }`}
                 >
                   <span className="relative z-10 whitespace-nowrap">{item.name}</span>
-                  <div className={`absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10 ${
-                    location.pathname === item.href ? 'scale-x-100' : ''
-                  }`}></div>
-                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full transition-all duration-300 group-hover:w-full ${
-                    location.pathname === item.href ? 'w-full' : ''
-                  }`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10 ${location.pathname === item.href ? 'scale-x-100' : ''
+                    }`}></div>
+                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full transition-all duration-300 group-hover:w-full ${location.pathname === item.href ? 'w-full' : ''
+                    }`}></div>
                 </Link>
               ))}
             </nav>
@@ -99,23 +98,19 @@ const Header = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-0 group-hover:scale-100 transition-transform duration-300 opacity-10 rounded-xl"></div>
               <div className="relative w-5 h-5 sm:w-6 sm:h-6">
-                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isMenuOpen ? 'rotate-45 top-2 sm:top-3' : 'top-1'
-                }`}></span>
-                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 top-2 sm:top-3 ${
-                  isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-                }`}></span>
-                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isMenuOpen ? '-rotate-45 top-2 sm:top-3' : 'top-3 sm:top-5'
-                }`}></span>
+                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-2 sm:top-3' : 'top-1'
+                  }`}></span>
+                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 top-2 sm:top-3 ${isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                  }`}></span>
+                <span className={`absolute block w-5 sm:w-6 h-0.5 bg-current transform transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-2 sm:top-3' : 'top-3 sm:top-5'
+                  }`}></span>
               </div>
             </button>
           </div>
 
           {/* Mobile Navigation */}
-          <div className={`lg:hidden overflow-hidden transition-all duration-500 ${
-            isMenuOpen ? 'max-h-screen pb-4 sm:pb-6' : 'max-h-0'
-          }`}>
+          <div className={`lg:hidden overflow-hidden transition-all duration-500 ${isMenuOpen ? 'max-h-screen pb-4 sm:pb-6' : 'max-h-0'
+            }`}>
             <div className="border-t border-gray-200 pt-4 sm:pt-6">
               <nav className="flex flex-col space-y-1 sm:space-y-2">
                 {navigation.map((item, index) => (
@@ -123,11 +118,10 @@ const Header = () => {
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-sm font-semibold transition-all duration-300 transform hover:translate-x-2 sm:hover:translate-x-3 hover:scale-105 relative overflow-hidden group ${
-                      location.pathname === item.href
-                        ? 'text-orange-600 bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 shadow-md'
-                        : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-md'
-                    }`}
+                    className={`px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-sm font-semibold transition-all duration-300 transform hover:translate-x-2 sm:hover:translate-x-3 hover:scale-105 relative overflow-hidden group ${location.pathname === item.href
+                      ? 'text-orange-600 bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 shadow-md'
+                      : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 hover:shadow-md'
+                      }`}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <span className="relative z-10">{item.name}</span>

@@ -10,9 +10,11 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg sm:text-xl">M</span>
-              </div>
+              <img
+                src="/Public/assest/logo-1.png"
+                alt="Mitra Commercial Logo"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-contain bg-white"
+              />
               <div>
                 <div className="font-bold text-white text-base sm:text-lg">Mitra Commercial</div>
                 <div className="text-xs sm:text-sm text-gray-400">Tata Hitachi Dealer</div>
